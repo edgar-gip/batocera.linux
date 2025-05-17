@@ -1,0 +1,11 @@
+--- a/scripts/src/main.lua
++++ b/scripts/src/main.lua
+@@ -299,7 +299,7 @@
+		ext_lib("jpeg"),
+		"7z",
+	}
+-if not _OPTIONS["FORCE_DRC_C_BACKEND"] then
++if (not _OPTIONS["FORCE_DRC_C_BACKEND"]) and ((_OPTIONS["PLATFORM"] == "x86") or (_OPTIONS["PLATFORM"] == "arm64")) then
+	links {
+		"asmjit",
+	}
